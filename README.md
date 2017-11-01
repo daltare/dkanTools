@@ -40,7 +40,7 @@ dkan_data <- read_dkan(resource_id = 'a731c980-9477-4ec7-bcfc-6d0cce00306c', fil
 The above example returns records from the dataset specificed by resource ID *a731c980-9477-4ec7-bcfc-6d0cce00306c* where the PWSID value is *CA3010037* AND the Stage_Invoked value is *Stage 1*, then it returns only 4 colums of data ('Supplier_Name', 'PWSID', '2013_Production_Reported', and 'Stage_Invoked').
 
 ```
-dkan_data <- read_dkan('a731c980-9477-4ec7-bcfc-6d0cce00306c', query = 'American Canyon, City of', sort_field = 'Reporting_Month', sort_direction = 'asc')
+dkan_data <- read_dkan(resource_id = 'a731c980-9477-4ec7-bcfc-6d0cce00306c', query = 'American Canyon, City of', sort_field = 'Reporting_Month', sort_direction = 'asc')
 ```
 
 The above example returns records from the dataset specificed by resource ID *a731c980-9477-4ec7-bcfc-6d0cce00306c* where the text *American Canyon, City of* is found within any field, and the records that are returned are sorted on the Reporting_Month field in ascending order.
