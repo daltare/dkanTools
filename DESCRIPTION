@@ -1,0 +1,13 @@
+Package: dkanTools
+Title: Interface with the California Open Data Portal's DKAN Datastore API
+Version: 0.0.0.9000
+Authors@R: person('David', 'Altare', email='david.altare@waterboards.ca.gov', role = c('aut', 'cre'))
+Description: This package defines an R function called read_dkan(), which provides an interface for the datastore API of any DKAN-based data portal, such as California's Open Data Portal (at: data.ca.gov_. The read_dkan() function retrieves data specified by the function parameters, and returns the data formatted in an R data frame. More information about the DKAN datastore API is at: http://dkan.readthedocs.io/en/latest/apis/datastore-api.html.
+Depends: R (>= 3.3.3)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Imports: dplyr,
+    httr,
+    jsonlite
