@@ -49,6 +49,9 @@ dkan_data <- read_dkan(resource_id = 'a731c980-9477-4ec7-bcfc-6d0cce00306c', fil
 # and the records that are returned are sorted on the Reporting_Month field in ascending order.
 dkan_data <- read_dkan(resource_id = 'a731c980-9477-4ec7-bcfc-6d0cce00306c', query = 'American Canyon, City of', sort_field = 'Reporting_Month', sort_direction = 'asc')
 
+# This is an example of accessing a data portal other than the California Open Data Portal (in this case, the Oakland Data Catalog, from OpenOakland)
+dkan_data <- read_dkan(base_URL = 'http://data.openoakland.org', resource_id = 'aca3da67-a4e2-46a0-8727-1657fcdc0e1d', filter_fields = 'street', filter_values = list(c('HENRY', 'FILBERT', 'MYRTLE')))
+
 }
 \keyword{California}
 \keyword{DKAN}
