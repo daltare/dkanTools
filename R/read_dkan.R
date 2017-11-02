@@ -37,6 +37,9 @@
 #' # and the records that are returned are sorted on the Reporting_Month field in ascending order.
 #' dkan_data <- read_dkan(resource_id = 'a731c980-9477-4ec7-bcfc-6d0cce00306c', query = 'American Canyon, City of', sort_field = 'Reporting_Month', sort_direction = 'asc')
 #'
+#' # This is an example of accessing a data portal other than the California Open Data Portal (in this case, the Oakland Data Catalog, from OpenOakland)
+#' dkan_data <- read_dkan(base_URL = 'http://data.openoakland.org', resource_id = 'aca3da67-a4e2-46a0-8727-1657fcdc0e1d', filter_fields = 'street', filter_values = list(c('HENRY', 'FILBERT', 'MYRTLE')))
+#' 
 #' @export
 read_dkan <- function(base_URL = 'https://data.ca.gov', resource_id, filter_fields = NA, filter_values = list(NA), fields = NA, query = NA, sort_field = NA, sort_direction = NA) {
 
@@ -44,8 +47,8 @@ read_dkan <- function(base_URL = 'https://data.ca.gov', resource_id, filter_fiel
     api_call <- paste0(base_URL, '/api/action/datastore/search.json?resource_id=', resource_id, '&limit=100')
 
     # Construct the 'filters' part of the query
-    if (!is.na(filter_fields[1]) | !is.na(filter_values[[1]])) {   # If: one or more of the filters arguments is present
-        if (!is.na(filter_fields[1]) & !is.na(filter_values)[[1]]) { # If: all of the filters arguments are present
+    if (!is.na(filter_fields[1]) | !is.na(filter_values[[1]][1])) {   # If: one or more of the filters arguments is present
+        if (!is.na(filter_fields[1]) & !is.na(filter_values)[[1]][1]) { # If: all of the filters arguments are present
             filter_text <- ''
             for (i in 1:length(filter_values[[1]])) {
                 filter_text <- paste0(filter_text, filter_values[[1]][i], ',') # convert the vector of filter values into a text string separated by commas
