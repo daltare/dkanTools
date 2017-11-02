@@ -104,8 +104,8 @@ read_dkan <- function(base_URL = 'https://data.ca.gov', resource_id, filter_fiel
     formatted.content <- jsonlite::fromJSON(raw.content)
     data.content <- formatted.content[[3]]
     dataset <- dplyr::as_tibble(data.content$records)
-    total.records <- data.content$total
-    limit <- data.content$limit
+    total.records <- as.numeric(data.content$total)
+    limit <- as.numeric(data.content$limit)
 
     # loop through the remaining records, download them, and append them to the 'dataset' variable
     # limit <- 10 # Manually set the total number of records downloaded each time
