@@ -6,7 +6,7 @@
 \usage{
 read_dkan(base_URL = "https://data.ca.gov", resource_id, filter_fields = NA,
   filter_values = list(NA), fields = NA, query = NA, sort_field = NA,
-  sort_direction = NA)
+  sort_direction = NA, max_records = NA)
 }
 \arguments{
 \item{base_URL}{The base URL for the data portal (defaults to: \code{https://data.ca.gov})}
@@ -30,6 +30,8 @@ contains a comma, the filter may not work, and the \code{query} field may need t
 
 \item{sort_direction}{The method (i.e., direction) for sorting the given \code{sort_field}, either ascending or descending. Enter \code{asc} (i.e., ascending)
 or \code{desc} (i.e., descending).}
+
+\item{max_records}{The maximum number of records to return (if not entered, all records satisfyting the input conditions will be returned).}
 }
 \value{
 This function returns a data frame with the all records for a given resource on

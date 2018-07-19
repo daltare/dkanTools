@@ -29,6 +29,7 @@ The possible arguments to the `read_dkan()` function include:
 * `query` (optional): A fulltext search across all fields (i.e, this returns all records where the query text is found in any field).
 * `sort_field` (optional): A field to sort (i.e. order) the records returned by the query, in either ascending or descending order.
 * `sort_direction` (optional): The method (i.e., direction) for sorting the given `sort_field`, either ascending or descending. Enter 'asc' (i.e., ascending) or 'desc' (i.e., descending).
+* `max_records` (optional): The maximum number of records to return (if not entered, all records satisfyting the input conditions will be returned).
 
 ## Example Function Call
 The following examples illustrate how to use the `read_dkan()` to download data from the California Open Data Portal via the datastore API (in each example, the results are stored in an object called `dkan_data`):
