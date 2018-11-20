@@ -107,6 +107,9 @@ read_dkan <- function(base_URL = 'https://data.ca.gov', resource_id, filter_fiel
 
     # get the first records (the smaller of the max_records entered or 100), and find the total number of records available
         raw.result <- httr::GET(api_call)
+        if (raw.result$status_code != 200) { # if there's an error with an HTTP status code, stop and report the code
+            stop(paste0('HTTP Status Code: ', raw.result$status_code))
+        }
         raw.content <- rawToChar(raw.result$content)
         formatted.content <- jsonlite::fromJSON(raw.content)
         data.content <- formatted.content[[3]]
