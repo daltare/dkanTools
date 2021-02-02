@@ -1,3 +1,6 @@
+## **** NOTE: THIS PACKAGE IS INACTIVE ****
+This package is no longer functional and is not being maintained, because the California Open Data Portal ([data.ca.gov](https://data.ca.gov/)) has moved from the DKAN platform to the CKAN platform. For working with the current CKAN version of the data portal using R, a great option is the [ckanr package](https://cran.r-project.org/web/packages/ckanr/index.html).
+
 ## Overview
 This package defines an R function called `read_dkan()` which provides an interface for datastore API of any DKAN-based data portal, such as California's Open Data Portal at [data.ca.gov](https://data.ca.gov/). The `read_dkan()` function retrieves data specified by the query parameters (described below), and returns the data formatted in an R data frame (which can be used for analysis within R, or written to an external file, such as a .csv file).
 
